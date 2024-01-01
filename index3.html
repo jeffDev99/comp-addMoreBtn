@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Load More Button</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      button#loadMoreBtn {
+        padding: 10px 20px;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul
+      class="cat-list d-flex flex-wrap justify-content-center list-unstyled m-0"
+    >
+      <button id="loadMoreBtn">
+        <figure>
+          <img src="./img/more.png" class="img-wrapper w-100" alt="بیشتر" />
+        </figure>
+        <figcaption class="text-center">
+          <h2 class="body2 font-medium">بیشتر</h2>
+        </figcaption>
+      </button>
+    </ul>
+
+    <script>
+      const cardContainer = document.querySelector(".cat-list");
+      const loadMoreButton = document.querySelector("#loadMoreBtn");
+      let categoryItem = [
+        { src: "./img/cat-khodro.png", title: "خودرو" },
+        { src: "./img/cat-bomi.png", title: "بومی محلی" },
+        { src: "./img/cat-kafsh.png", title: "کفش" },
+        { src: "./img/cat-abazhor.png", title: "آباژور" },
+      ];
+      const cardLimit = categoryItem.length;
+      const cardIncrease = 1;
+      const pageCount = Math.ceil(cardLimit / cardIncrease);
+      let currentPage = 1;
+
+
+      const handleButtonStatus = () => {
+        if (pageCount === currentPage) {
+          loadMoreButton.classList.add("disabled");
+          loadMoreButton.setAttribute("disabled", true);
+        }
+      };
+      const createCard = (src, title) => {
+        const card = document.createElement("li");
+        card.classList.add("cat-list__item");
+        card.innerHTML = `
+              <a href="#" class="cat-list__link link-normal"> 
+                <figure>
+                  <img src="${src}" class="img-wrapper w-100" alt="${title}">
+                </figure>
+                <figcaption class="text-center">
+                  <h2 class="body2 font-medium">${title}</h2>
+                </figcaption>
+              </a>
+            `;
+        cardContainer.appendChild(card);
+      };
+      const addCards = (pageIndex) => {
+        currentPage = pageIndex;
+        handleButtonStatus();
+        const startRange = (pageIndex - 1) * cardIncrease;
+        const endRange =
+          pageIndex * cardIncrease > cardLimit
+            ? cardLimit
+            : pageIndex * cardIncrease;
+
+
+        for (let i = startRange + 1; i <= endRange; i++) {
+          createCard(categoryItem[i - 1].src, categoryItem[i - 1].title);
+        }
+      };
+      window.onload = function () {
+        addCards(currentPage);
+        loadMoreButton.addEventListener("click", () => {
+            addCards(currentPage + 1);
+        });
+      };
+    </script>
+  </body>
+</html>

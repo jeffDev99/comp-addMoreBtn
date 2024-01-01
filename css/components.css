@@ -1,0 +1,157 @@
+/* normalize */
+@font-face {
+    font-family:Vazirmatn-Regular ;
+    src: url(../font/Vazirmatn-Regular.ttf);
+}
+@font-face {
+    font-family:Vazirmatn-Medium ;
+    src: url(../font/Vazirmatn-Medium.ttf);
+}
+@font-face {
+    font-family:Vazirmatn-SemiBold ;
+    src: url(../font/Vazirmatn-SemiBold.ttf);
+}
+@font-face {
+    font-family:Vazirmatn-Bold ;
+    src: url(../font/Vazirmatn-Bold.ttf);
+}
+body{
+    font-family: Vazirmatn-Regular;
+    /* colors */
+    --base-light : #fff;
+    --base-dark : #000;
+    
+    --Neutral-25 : #FCFCFD;
+    --Neutral-50 : #F9FAFB;
+    --Neutral-100 : #F2F4F7;
+    --Neutral-200 : #EAECF0;
+    --Neutral-300 : #D0D5DD;
+    --Neutral-400 : #98A2B3;
+    --Neutral-500 : #667085;
+    --Neutral-600 : #475467;
+    --Neutral-700 : #344054;
+    --Neutral-800 : #1D2939;
+    --Neutral-900 : #101828;
+
+    --Primary-25 : #F5FBFF;
+    --Primary-50 : #F0F9FF;
+    --Primary-100 : #E0F2FE;
+    --Primary-200 : #B9E6FE;
+    --Primary-300 : #7CD4FD;
+    --Primary-400 : #36BFFA;
+    --Primary-500 : #0BA5EC;
+    --Primary-600 : #0086C9;
+    --Primary-700 : #026AA2;
+    --Primary-800 : #065986;
+    --Primary-900 : #0B4A6F;
+
+    --Error-25 : #FFFBFA;
+    --Error-50 : #FEF3F2;
+    --Error-100 : #FEE4E2;
+    --Error-200 : #FECDCA;
+    --Error-300 : #FDA29B;
+    --Error-400 : #F97066;
+    --Error-500 : #F04438;
+    --Error-600 : #D92D20;
+    --Error-700 : #B42318;
+    --Error-800 : #912018;
+    --Error-900 : #7A271A;
+
+    --Warning-25 : #FFFCF5;
+    --Warning-50 : #FFFAEB;
+    --Warning-100 : #FEF0C7;
+    --Warning-200 : #FEDF89;
+    --Warning-300 : #FEC84B;
+    --Warning-400 : #FDB022;
+    --Warning-500 : #F79009;
+    --Warning-600 : #DC6803;
+    --Warning-700 : #B54708;
+    --Warning-800 : #93370D;
+    --Warning-900 : #7A2E0E;
+
+    --Success-25 : #F6FEF9;
+    --Success-50 : #ECFDF3;
+    --Success-100 : #D1FADF;
+    --Success-200 : #A6F4C5;
+    --Success-300 : #6CE9A6;
+    --Success-400 : #32D583;
+    --Success-500 : #12B76A;
+    --Success-600 : #039855;
+    --Success-700 : #027A48;
+    --Success-800 : #05603A;
+    --Success-900 : #054F31;
+
+    --Info-25 : #F5F8FF;
+    --Info-50 : #EFF4FF;
+    --Info-100 : #D1E0FF;
+    --Info-200 : #B2CCFF;
+    --Info-300 : #84ADFF;
+    --Info-400 : #528BFF;
+    --Info-500 : #2970FF;
+    --Info-600 : #155EEF;
+    --Info-700 : #004EEB;
+    --Info-800 : #0040C1;
+    --Info-900 : #00359E;
+}
+.link-normal{
+    text-decoration: none;
+    color: var(--Neutral-600);
+    display: block;
+}
+
+.link-normal:hover{
+    color: var(--Neutral-800);
+}
+/* primary */
+.btn-cus-primary{
+    border-radius: 0.5rem;
+    border: 1px solid var(--Primary-500);
+    background: var(--Primary-500);
+    font-family: Vazirmatn-Regular;
+}
+.btn-cus-primary:focus{
+    box-shadow: 0px 0px 0px 4px #F4EBFF, 0px 1px 2px 0px rgba(16, 24, 40, 0.05) ;
+    background-color: var(--Primary-500);
+    border-color:var(--Primary-500) ;
+}
+
+.btn-cus-primary:disabled{
+    border: 1px solid var(--Primary-200);
+    background: var(--Primary-200);
+}
+
+.btn-cus-primary:hover{
+    color: #fff;
+    background-color: var(--Primary-600);
+    border-color: var(--Primary-600);
+}
+/* btn sizing */
+.btn-cus-sm{
+    padding: 0.5rem 0.875rem;
+}
+.btn-cus-md{
+    padding: 0.625rem 1rem;
+}
+.btn-cus-lg{
+    padding: 0.625rem 1.125rem;
+}
+
+.btn-cus-xl{
+    padding: 0.75rem 1.25rem;
+}
+
+.btn-cus-2xl{
+    padding: 1rem 1.75rem;
+}
+/* ---------------------------------- */
+.top-header__link{
+    color: var(--Neutral-600);
+    text-decoration: none;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem; /* 150% */
+}
+.top-header__link:hover{
+    color: var(--Neutral-800);
+}
